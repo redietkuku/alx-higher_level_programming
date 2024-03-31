@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""
-Prints an integer with "{:d}".format().
+"""Prints an integer with "{:d}".format()."""
 
-"""
+
 def safe_print_integer(value):
     try:
         print("{:d}".format(value))
-    except(ValueError, TypeError):
+    except ValueError, TypeError:
         return False
     else:
         return True
