@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""does the same thing as python bytecode"""
 
 
 def magic_calculation(a, b):
