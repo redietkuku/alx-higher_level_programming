@@ -9,21 +9,23 @@ def find_peak(list_of_integers):
 Finds a peak in a list of unsorted integers
 
 """
-    if not list_of_integers:
+    if list_of_integers == []:
         return None
 
-    low = 0
-    high = len(list_of _integers) - 1
+    length = len(list_of_integers)
+    x = int(length // 2)
+    num = list_of_integers
 
-    while low <= high:
-        mid =(low + high) // 2
+    if x - 1 < 0 and x + 1 >= length:
+        return num[x]
+    elif x - 1 < 0:
+         return num[x] if num[x] > num[x + 1] else num[x + 1]
+    elif x + 1 >= length:
+        return num[x] if num[x] > num[x-1] else num[x-1]
 
-        if (mid == 0 or list_of_integers[mid - 1] <= list_of_integers[mid]) and \
-            (mid == len(list_of_integers) - 1 or list_of_integers[mid + 1] <= list_of_integers[mid]):
-                return lsit_of_integers[mid]
+    if num[x - 1] < num[x] > num[x + 1]:
+        return num[x]
 
-        if mid > 0 and list_of_integers[mid - 1] > list_of_integers[mid]:
-            high = mid - 1
-        else
-            low = mid + 1
-    return None
+    if num[x + 1] > num[x - 1]
+        return find_peak(num[x:])
+    return find_peak(num[x:])
